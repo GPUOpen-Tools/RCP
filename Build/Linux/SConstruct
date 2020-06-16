@@ -94,7 +94,7 @@ initCommonLibAmd (CXL_env, CXL_lib_common_amd_deps)
 ##############################################################
 # Print out all environment variables of CXL_env if verbose is specified
 if CXL_env['CXL_build_verbose'] != 0 :
-	print CXL_env.Dump()
+	print(CXL_env.Dump())
 
 
 ##############################################################

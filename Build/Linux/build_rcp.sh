@@ -211,6 +211,12 @@ RCP_ARCHIVE="$BUILD_PATH/$RCP_ARCHIVE_BASE"
 
 RCPPROFILEDATAPARSERARCHIVE="$PROFILEDATAPARSER-$VERSION_STR.tgz"
 
+# Since the https://github.com/GPUOpen-Archive/common-src-SCons repository
+# is archived, we need to modify CXL_init.py here
+2to3 --no-diffs -n -w $BUILD_PATH/CXL_init.py
+
+sed -i s,-Werror,, $BUILD_PATH/CXL_init.py
+
 if ! ($bZipOnly) ; then
    # delete log file
    if ! ($bAppendToLog) ; then
